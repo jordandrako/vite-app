@@ -1,8 +1,5 @@
 module.export = {
-  plugins: [
-    "prettier",
-    "@typescript-eslint"
-  ],
+  plugins: ["prettier", "@typescript-eslint"],
   extends: [
     "airbnb-typescript",
     "react-app",
@@ -10,33 +7,27 @@ module.export = {
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "./tsconfig.json"
+    project: "./tsconfig.json",
   },
   settings: {
     "import/resolver": {
       typescript: {
-        alwaysTryTypes: true
-      }
-    }
+        alwaysTryTypes: true,
+      },
+    },
   },
   rules: {
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [
-          "**/*.test.js",
-          "**/*.test.jsx",
-          "**/*.test.ts",
-          "**/*.test.tsx",
-          "src/tests/**/*"
-        ]
-      }
+        devDependencies: ["**/*.test.{js,jsx,ts,tsx}", "src/tests/**/*"],
+      },
     ],
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-  }
-}
+  },
+};
